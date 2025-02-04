@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/chatup
+    username: postgresql
+    password: Venom07%
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        formate_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: false
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/master
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+
+application:
+  file:
+    uploads:
+      media-output-path: ./upload
+        
+
