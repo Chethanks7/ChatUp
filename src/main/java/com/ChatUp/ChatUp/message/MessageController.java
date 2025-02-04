@@ -1,5 +1,7 @@
 package com.ChatUp.ChatUp.message;
 
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +26,10 @@ public class MessageController {
 
     @PostMapping(value = "/upload-media",consumes = "multipart/form-data")
     @ResponseStatus(HttpStatus.CREATED)
+    @Tag(name = "Message")
     public void uploadMedia(
             @RequestParam("chat-id") String chatId,
+            @Parameter()
             @RequestParam("file")MultipartFile file,
             Authentication authentication
             ){

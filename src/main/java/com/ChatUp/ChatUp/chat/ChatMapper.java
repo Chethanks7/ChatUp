@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 public class ChatMapper {
 
     public ChatResponse toChatResponse(@NotNull Chat chat, String userId){

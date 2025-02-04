@@ -5,6 +5,7 @@ import com.ChatUp.ChatUp.message.Message;
 import com.ChatUp.ChatUp.message.MessageState;
 import com.ChatUp.ChatUp.message.MessageType;
 import com.ChatUp.ChatUp.user.User;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +28,7 @@ import static jakarta.persistence.GenerationType.UUID;
 @NamedQuery(name = ChatConstant.FIND_CHAT_BY_SENDER_ID_AND_RECEIVER_ID,
         query = "SELECT DISTINCT c  FROM Chat c WHERE (c.sender.id = :senderId AND c.receiver.id = :receiverId)" +
                 " OR (c.sender.id = :receiverId AND c.receiver.id = :senderId)")
+@Tag(name = "Chat")
 public class Chat extends BaseAuditingEntity {
 
     @Id
